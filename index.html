@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【あなたの名前】 | ポートフォリオ</title>
+    <!-- Tailwind CSS CDNを読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- フォント設定 (Inter) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', 'Noto Sans JP', sans-serif;
+            background-color: #f4f7f9; /* 背景を薄いグレーに */
+            color: #1e293b; /* ダークなテキスト色 */
+        }
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #3b82f6; /* 青色でアクセント */
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダー (ナビゲーションバー) -->
+    <header class="sticky top-0 z-50 bg-white header-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- ロゴ/サイトタイトル -->
+                <a href="#" class="text-2xl font-extrabold text-blue-600 tracking-tight">
+                    <span class="text-gray-900">Portfolio</span>
+                </a>
+                <!-- ナビゲーションリンク -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out font-medium">自己紹介</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out font-medium">スキル</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out font-medium">実績</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-150 ease-in-out font-medium">連絡先</a>
+                </nav>
+                <!-- モバイルメニューボタン (非表示) -->
+                <button class="md:hidden p-2 text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- ヒーローセクション (自己紹介トップ) -->
+        <section id="hero" class="text-center py-16 sm:py-24 bg-white rounded-xl shadow-lg">
+            <div class="flex flex-col items-center">
+                <!-- プロフィール画像 placeholder -->
+                <div class="w-32 h-32 md:w-40 md:h-40 bg-gray-300 rounded-full mb-6 border-4 border-blue-500 overflow-hidden">
+                    <img src="https://placehold.co/160x160/cbd5e1/1f2937?text=Your+Photo" alt="プロフィール写真" class="w-full h-full object-cover">
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight mb-2">
+                    【あなたの名前】
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 font-light">
+                    〇〇大学 〇〇学部 〇年生
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <!-- SNSリンクの例 (アイコンはLucide-reactの代わりとしてSVGを使用) -->
+                    <a href="#" class="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-150 ease-in-out shadow-md hover:shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c-4 .7-5-2-5-2a3 3 0 0 0-1-2.4c-.9-.6 1.1-.6 1.1-.6a2.7 2.7 0 0 1 2 1.4c1 1.6 2.8 1.1 3.4.9a2.7 2.7 0 0 1 .8-1.5c-4-.5-8-2-8-8a6.5 6.5 0 0 1 1.7-4.5a6.5 6.5 0 0 1 .1-4.7s1.3-.4 4 1.7a13.5 13.5 0 0 1 6 0c2.7-2.1 4-1.7 4-1.7a6.5 6.5 0 0 1 .1 4.7a6.5 6.5 0 0 1 1.7 4.5c0 6-4 7.5-8 8a2.7 2.7 0 0 1 .8 2.2v4"></path></svg>
+                    </a>
+                    <a href="#" class="p-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-150 ease-in-out shadow-md hover:shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 自己紹介セクション (ガクチカ含む) -->
+        <section id="about" class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl section-title text-gray-900">自己紹介 (About Me)</h2>
+            <div class="space-y-6 text-gray-700 text-base leading-relaxed">
+                <p>
+                    〇〇大学〇〇学部で、主にWebデザインとプログラミングを学んでいます。新しい技術を積極的に学び、アウトプットすることを大切にしています。
+                </p>
+                <h3 class="text-xl font-bold text-gray-800 border-l-4 border-blue-400 pl-3">学生時代に力を入れたこと（ガクチカ）</h3>
+                <p class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                    高校のオープンキャンパスで、50人程の中学生を前に自分の通う高校を紹介する大役を担いました。一週間という準備期間でいかに睡魔と戦う中学生を飽きさせないかを考えました。そこで私は、これまでは台本の通りに読むことばかり考えていましたが、今回は台本の内容を自分の言いやすい話し言葉に変えて紹介しました。工夫の結果、話し方に抑揚が付き熱がこもりました。初め下を向いていた中学生が顔を上げ、真剣に耳を傾けてくれるようになりました。この手応えから、相手の状況に合わせた表現の重要性を痛感しました。この経験は準備に対して怠らず徹底することとその場に応じたコミュニケーション能力がみについたと実感しています。
+                </p>
+                <p>
+                    この経験から、デザインにおいても「**相手がどう感じるか**」「**どうすれば伝わるか**」を常に意識するようになりました。ユーザーの視点に立って、徹底的に準備し、最適な表現を追求していきます。
+                </p>
+            </div>
+        </section>
+
+        <!-- スキルセクション -->
+        <section id="skills" class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl section-title text-gray-900">スキル (Skills)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <!-- スキルカード1: デザイン -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-inner hover:shadow-md transition duration-300">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V3M5 12H19M16 16.5C16 18.9853 14.237 21 12 21C9.763 21 8 18.9853 8 16.5M16 7.5C16 5.01472 14.237 3 12 3C9.763 3 8 5.01472 8 7.5"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">デザイン</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+                        <li>UI/UXデザイン (Figma)</li>
+                        <li>ワイヤーフレーム作成</li>
+                        <li>モダンでレスポンシブな設計</li>
+                    </ul>
+                </div>
+
+                <!-- スキルカード2: フロントエンド -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-inner hover:shadow-md transition duration-300">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">フロントエンド</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Tailwind CSS / React (基礎)</li>
+                    </ul>
+                </div>
+
+                <!-- スキルカード3: その他 -->
+                <div class="p-6 bg-gray-50 rounded-lg shadow-inner hover:shadow-md transition duration-300">
+                    <svg class="w-10 h-10 mx-auto mb-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15v4m0 0v-4m0 4h4M7 17l-3 3M17 14V2m0 0V14m0-12h4M7 4h10M7 4V2M17 4V2"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">その他</h3>
+                    <ul class="text-gray-600 text-sm list-disc list-inside space-y-1">
+                        <li>Git / GitHub</li>
+                        <li>論理的思考力</li>
+                        <li>コミュニケーション能力 (対話/プレゼン)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績 (Projects) セクション -->
+        <section id="projects" class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h2 class="text-3xl section-title text-gray-900">実績 (Projects)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- プロジェクトカード 1 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Project+A" alt="プロジェクトAのイメージ" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">学校紹介ウェブサイト</h3>
+                        <p class="text-gray-600 text-sm mb-3">レスポンシブデザインを取り入れた、高校のクラブ活動紹介サイト。情報を整理し、視覚的に訴えるデザインを意識。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">HTML</span>
+                            <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">CSS</span>
+                            <span class="text-xs font-medium bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm">詳細を見る &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- プロジェクトカード 2 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/10b981/ffffff?text=Project+B" alt="プロジェクトBのイメージ" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">ToDoリストアプリ (Web版)</h3>
+                        <p class="text-gray-600 text-sm mb-3">モダンなUI/UXを目指し、タスク管理の使いやすさを追求したシンプルなWebアプリケーション。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-green-100 text-green-800 px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="text-xs font-medium bg-green-100 text-green-800 px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm">詳細を見る &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- プロジェクトカード 3 -->
+                <div class="bg-gray-50 border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Project+C" alt="プロジェクトCのイメージ" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">個人ブログデザイン</h3>
+                        <p class="text-gray-600 text-sm mb-3">読みやすさを最優先したタイポグラフィとカラースキームを採用。シンプルながらも飽きのこないデザイン。</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-yellow-100 text-yellow-800 px-2.5 py-0.5 rounded-full">Figma</span>
+                            <span class="text-xs font-medium bg-yellow-100 text-yellow-800 px-2.5 py-0.5 rounded-full">Design</span>
+                        </div>
+                        <a href="#" class="mt-4 inline-block text-blue-600 hover:text-blue-800 font-medium text-sm">詳細を見る &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 連絡先セクション -->
+        <section id="contact" class="bg-blue-600 p-8 md:p-12 rounded-xl shadow-lg text-white text-center">
+            <h2 class="text-3xl font-bold mb-4">お問い合わせ (Contact)</h2>
+            <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
+                ポートフォリオをご覧いただきありがとうございます。お仕事のご依頼やご相談がありましたら、お気軽にご連絡ください。
+            </p>
+            <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-blue-600 bg-white hover:bg-gray-100 md:py-4 md:text-lg md:px-10 shadow-lg transition duration-150 ease-in-out">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4"></path></svg>
+                メールを送る
+            </a>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 【あなたの名前】 All rights reserved. | <span class="text-blue-400">Powered by Gemini</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
